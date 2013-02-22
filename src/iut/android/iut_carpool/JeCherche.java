@@ -10,28 +10,29 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import android.support.v4.app.NavUtils;
 
-public class JeCherche extends Activity implements OnClickListener{
+public class JeCherche extends Activity implements OnClickListener {
 
 	EditText nom, adresse, phoneNumber;
 	Button ok;
-	
+
 	Student student;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_je_cherche);
 		// Show the Up button in the action bar.
-		///getActionBar().setDisplayHomeAsUpEnabled(true);
-		
+		// /getActionBar().setDisplayHomeAsUpEnabled(true);
+
 		nom = (EditText) findViewById(R.id.nom);
 		adresse = (EditText) findViewById(R.id.adresse);
 		phoneNumber = (EditText) findViewById(R.id.phoneNumber);
-		
-		ok = (Button) findViewById(R.id.ok); 
-        ok.setOnClickListener(this);
+
+		ok = (Button) findViewById(R.id.ok);
+		ok.setOnClickListener(this);
 	}
 
 	@Override
@@ -60,19 +61,33 @@ public class JeCherche extends Activity implements OnClickListener{
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()){
-				
-				case R.id.ok:
-					Log.i("Je cherche", "OK");
-					
-					student = new Student(phoneNumber.getText().toString(),nom.getText().toString(),adresse.getText().toString(),null,null,null);
-					
-					break;
-					
-				
-				
-				}
-		
+		switch (v.getId()) {
+
+		case R.id.ok:
+			Log.i("Je cherche", "OK");
+
+			// Toast toast = Toast.makeText(getApplicationContext(),
+			// phoneNumber.getText().toString(), Toast.LENGTH_LONG);
+			// toast.show();
+
+			EditText[] fields = { nom, adresse, phoneNumber };
+			TextFieldChecker check = TextFieldChecker.getInstance(fields);
+
+			if (check.isAnyFieldNull() == true) {
+				Toast toast = Toast.makeText(getApplicationContext(),
+						"Tous les domaines sont obligatoires",
+						Toast.LENGTH_LONG);
+				toast.show();
+			} else {
+
+				student = new Student(phoneNumber.getText().toString(), nom
+						.getText().toString(), adresse.getText().toString(),
+						null, null, null);
+			}
+			break;
+
+		}
+
 	}
 
 }

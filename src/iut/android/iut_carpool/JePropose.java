@@ -70,25 +70,39 @@ public class JePropose extends Activity implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.ok:
 
-			try{
-				int seats = Integer.parseInt(availableSits.getText().toString());
-	
-				student = new Student(phoneNumber.getText().toString(), nom
-						.getText().toString(), adresse.getText().toString(), null,
-						licencePlate.getText().toString(), null);
-				
-				car = new Car(licencePlate.getText().toString(), brand.getText()
-						.toString(), model.getText().toString(), color.getText()
-						.toString(), seats, 0);
-			}catch(NumberFormatException e){
-				Log.e("Je Propose", e.getMessage());
-				
-				Toast toast = Toast.makeText(getApplicationContext(), "Entrez places disponibles", Toast.LENGTH_LONG);
-		        toast.show();
+			EditText[] fields = { nom, adresse, phoneNumber, licencePlate,
+					brand, model, color, availableSits };
+			TextFieldChecker check = TextFieldChecker.getInstance(fields);
+
+			if (check.isAnyFieldNull() == true) {
+				Toast toast = Toast.makeText(getApplicationContext(),
+						"Tous les domaines sont obligatoires",
+						Toast.LENGTH_LONG);
+				toast.show();
+			} else {
+				try {
+					int seats = Integer.parseInt(availableSits.getText()
+							.toString());
+
+					student = new Student(phoneNumber.getText().toString(), nom
+							.getText().toString(),
+							adresse.getText().toString(), null, licencePlate
+									.getText().toString(), null);
+
+					car = new Car(licencePlate.getText().toString(), brand
+							.getText().toString(), model.getText().toString(),
+							color.getText().toString(), seats, 0);
+				} catch (NumberFormatException e) {
+					Log.e("Je Propose", e.getMessage());
+
+					Toast toast = Toast.makeText(getApplicationContext(),
+							e.getMessage()	,
+							Toast.LENGTH_LONG);
+					toast.show();
+				}
+
 			}
-			
-			
-			
+
 			break;
 		}
 
