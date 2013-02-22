@@ -68,30 +68,51 @@ public class JePropose extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
+		
+		//OK button is pressed
 		case R.id.ok:
 
+			//get instance of TextFieldChecker class and initialize it with textfields
 			EditText[] fields = { nom, adresse, phoneNumber, licencePlate,
 					brand, model, color, availableSits };
 			TextFieldChecker check = TextFieldChecker.getInstance(fields);
 
+			//If any of the text fields is empty, show error message
 			if (check.isAnyFieldNull() == true) {
 				Toast toast = Toast.makeText(getApplicationContext(),
 						"Tous les domaines sont obligatoires",
 						Toast.LENGTH_LONG);
 				toast.show();
+			
+			//Otherwise save the data
 			} else {
 				try {
+					
+					//parse number of seats to valid integer
 					int seats = Integer.parseInt(availableSits.getText()
 							.toString());
 
+					//Create student DTO
 					student = new Student(phoneNumber.getText().toString(), nom
 							.getText().toString(),
 							adresse.getText().toString(), null, licencePlate
 									.getText().toString(), null);
 
+					//Create car DTO
 					car = new Car(licencePlate.getText().toString(), brand
 							.getText().toString(), model.getText().toString(),
 							color.getText().toString(), seats, 0);
+					
+					//show toast
+					Toast toast = Toast.makeText(getApplicationContext(),
+							"Bon voyage",
+							Toast.LENGTH_LONG);
+					toast.show();
+					
+					//close this activity
+					finish();
+					
+				//if number of seats is not a valid integer, show error message
 				} catch (NumberFormatException e) {
 					Log.e("Je Propose", e.getMessage());
 
@@ -100,12 +121,8 @@ public class JePropose extends Activity implements OnClickListener {
 							Toast.LENGTH_LONG);
 					toast.show();
 				}
-
 			}
-
 			break;
 		}
-
 	}
-
 }

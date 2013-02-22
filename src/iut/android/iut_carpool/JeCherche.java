@@ -63,31 +63,39 @@ public class JeCherche extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 
+		//OK button is pressed
 		case R.id.ok:
 			Log.i("Je cherche", "OK");
-
-			// Toast toast = Toast.makeText(getApplicationContext(),
-			// phoneNumber.getText().toString(), Toast.LENGTH_LONG);
-			// toast.show();
-
+			
+			//get instance of TextFieldChecker class and initialize it with textfields
 			EditText[] fields = { nom, adresse, phoneNumber };
 			TextFieldChecker check = TextFieldChecker.getInstance(fields);
 
+			//If any of the text fields is empty, show error message
 			if (check.isAnyFieldNull() == true) {
 				Toast toast = Toast.makeText(getApplicationContext(),
 						"Tous les domaines sont obligatoires",
 						Toast.LENGTH_LONG);
 				toast.show();
+			
+			//Otherwise save the data
 			} else {
-
+				
+				//Create student DTO
 				student = new Student(phoneNumber.getText().toString(), nom
 						.getText().toString(), adresse.getText().toString(),
 						null, null, null);
+				
+				//show toast
+				Toast toast = Toast.makeText(getApplicationContext(),
+						"Bonne chance",
+						Toast.LENGTH_LONG);
+				toast.show();
+			
+				//close this activity
+				finish();
 			}
 			break;
-
 		}
-
 	}
-
 }

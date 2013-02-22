@@ -2,6 +2,8 @@ package iut.android.iut_carpool;
 
 import android.widget.EditText;
 
+
+//This class is for quick validating of textfields
 public class TextFieldChecker {
 	
 	private static EditText[] fields;
