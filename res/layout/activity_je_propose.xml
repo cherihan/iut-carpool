@@ -5,6 +5,25 @@
     tools:context=".JePropose" >
     
     <EditText
+        android:id="@+id/adresse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:ems="10"
+        android:hint="@string/adresse"
+        android:inputType="textPostalAddress" />
+    
+    <Button
+        android:id="@+id/ok"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/adresse"
+        android:text="@string/ok" />
+    
+    <!-- 
+    <EditText
         android:id="@+id/nom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,18 +33,10 @@
         android:hint="@string/nom"
         android:inputType="text" >
 
-        <requestFocus />
+        
     </EditText>
 
-    <EditText
-        android:id="@+id/adresse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/nom"
-        android:ems="10"
-        android:hint="@string/adresse"
-        android:inputType="textPostalAddress" />
+    
 
     <EditText
         android:id="@+id/phoneNumber"
@@ -36,7 +47,7 @@
         android:ems="10"
         android:hint="@string/numeroDeTelephone"
         android:inputType="phone" />
-
+ -->
     <!--  
     <EditText
         android:id="@+id/licencePlate"
@@ -89,14 +100,7 @@
         android:inputType="phone" />
     -->
     
-    <Button
-        android:id="@+id/ok"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/phoneNumber"
-        android:text="@string/ok" />
+    
     
 
 </RelativeLayout>
