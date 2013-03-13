@@ -2,11 +2,13 @@ package iut.android.iut_carpool;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,8 +16,8 @@ import android.support.v4.app.NavUtils;
 
 public class JePropose extends Activity implements OnClickListener {
 
-	EditText nom, adresse, phoneNumber, licencePlate, brand, model, color,
-			availableSits;
+	EditText nom, adresse, phoneNumber;
+	//licencePlate, brand, model, color,availableSits;
 	Button ok;
 
 	Student student;
@@ -29,13 +31,16 @@ public class JePropose extends Activity implements OnClickListener {
 		// getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		nom = (EditText) findViewById(R.id.nom);
+		InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+	    mgr.showSoftInput(nom, InputMethodManager.SHOW_IMPLICIT);
+		
 		adresse = (EditText) findViewById(R.id.adresse);
 		phoneNumber = (EditText) findViewById(R.id.phoneNumber);
-		licencePlate = (EditText) findViewById(R.id.licencePlate);
+		/*licencePlate = (EditText) findViewById(R.id.licencePlate);
 		brand = (EditText) findViewById(R.id.brand);
 		model = (EditText) findViewById(R.id.model);
 		color = (EditText) findViewById(R.id.color);
-		availableSits = (EditText) findViewById(R.id.availableSits);
+		availableSits = (EditText) findViewById(R.id.availableSits);*/
 
 		ok = (Button) findViewById(R.id.ok);
 		ok.setOnClickListener(this);
@@ -44,7 +49,7 @@ public class JePropose extends Activity implements OnClickListener {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_je_propose, menu);
+		//getMenuInflater().inflate(R.menu.activity_je_propose, menu);
 		return true;
 	}
 
@@ -73,8 +78,8 @@ public class JePropose extends Activity implements OnClickListener {
 		case R.id.ok:
 
 			//get instance of TextFieldChecker class and initialize it with textfields
-			EditText[] fields = { nom, adresse, phoneNumber, licencePlate,
-					brand, model, color, availableSits };
+			EditText[] fields = { nom, adresse, phoneNumber};// licencePlate,
+					//brand, model, color, availableSits };
 			TextFieldChecker check = TextFieldChecker.getInstance(fields);
 
 			//If any of the text fields is empty, show error message
@@ -89,19 +94,19 @@ public class JePropose extends Activity implements OnClickListener {
 				try {
 					
 					//parse number of seats to valid integer
-					int seats = Integer.parseInt(availableSits.getText()
-							.toString());
+					//int seats = Integer.parseInt(availableSits.getText()
+					//		.toString());
 
 					//Create student DTO
-					student = new Student(phoneNumber.getText().toString(), nom
-							.getText().toString(),
-							adresse.getText().toString(), null, licencePlate
-									.getText().toString(), null);
+					//student = new Student(phoneNumber.getText().toString(), nom
+					//		.getText().toString(),
+					//		adresse.getText().toString(), null, licencePlate
+					//				.getText().toString(), null);
 
 					//Create car DTO
-					car = new Car(licencePlate.getText().toString(), brand
-							.getText().toString(), model.getText().toString(),
-							color.getText().toString(), seats, 0);
+					//car = new Car(licencePlate.getText().toString(), brand
+					//		.getText().toString(), model.getText().toString(),
+					//		color.getText().toString(), seats, 0);
 					
 					//show toast
 					Toast toast = Toast.makeText(getApplicationContext(),
