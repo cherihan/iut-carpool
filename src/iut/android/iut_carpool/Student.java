@@ -3,6 +3,7 @@ package iut.android.iut_carpool;
 public class Student {
 	
 	private String phoneNumber, name, adress, coordinates, hasCar, ridesCar;
+	public String returnString;
 
 	public Student(String phoneNumber, String name, String adress,
 			String coordinates, String hasCar, String ridesCar) {
@@ -63,6 +64,12 @@ public class Student {
 		this.ridesCar = ridesCar;
 	}
 	
+
+	public void getServerData(){
+		Test test = new Test();
+		test.run();
+		returnString = test.result2;
 	
+	}
 
 }
