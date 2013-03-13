@@ -2,13 +2,11 @@ package iut.android.iut_carpool;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Context;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,8 +14,8 @@ import android.support.v4.app.NavUtils;
 
 public class JePropose extends Activity implements OnClickListener {
 
-	EditText nom, adresse, phoneNumber;
-	//licencePlate, brand, model, color,availableSits;
+	EditText adresse;
+	//licencePlate, brand, model, color,availableSits; nom, phoneNumber;
 	Button ok;
 
 	Student student;
@@ -30,12 +28,12 @@ public class JePropose extends Activity implements OnClickListener {
 		// Show the Up button in the action bar.
 		// getActionBar().setDisplayHomeAsUpEnabled(true);
 
-		nom = (EditText) findViewById(R.id.nom);
-		InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-	    mgr.showSoftInput(nom, InputMethodManager.SHOW_IMPLICIT);
+		//nom = (EditText) findViewById(R.id.nom);
+		//InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+	    //mgr.showSoftInput(nom, InputMethodManager.SHOW_IMPLICIT);
 		
 		adresse = (EditText) findViewById(R.id.adresse);
-		phoneNumber = (EditText) findViewById(R.id.phoneNumber);
+		//phoneNumber = (EditText) findViewById(R.id.phoneNumber);
 		/*licencePlate = (EditText) findViewById(R.id.licencePlate);
 		brand = (EditText) findViewById(R.id.brand);
 		model = (EditText) findViewById(R.id.model);
@@ -78,7 +76,7 @@ public class JePropose extends Activity implements OnClickListener {
 		case R.id.ok:
 
 			//get instance of TextFieldChecker class and initialize it with textfields
-			EditText[] fields = { nom, adresse, phoneNumber};// licencePlate,
+			EditText[] fields = { adresse};// licencePlate,
 					//brand, model, color, availableSits };
 			TextFieldChecker check = TextFieldChecker.getInstance(fields);
 
