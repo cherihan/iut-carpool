@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:ems="10"
         android:hint="@string/nom"
-        android:inputType="textPersonName" >
+        android:inputType="text" >
 
         <requestFocus />
     </EditText>
@@ -37,6 +37,7 @@
         android:hint="@string/numeroDeTelephone"
         android:inputType="phone" />
 
+    <!--  
     <EditText
         android:id="@+id/licencePlate"
         android:layout_width="wrap_content"
@@ -85,7 +86,8 @@
         android:layout_below="@+id/color"
         android:ems="10"
         android:hint="@string/placesDisponibles"
-        android:inputType="number" />
+        android:inputType="phone" />
+    -->
     
     <Button
         android:id="@+id/ok"
@@ -93,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/availableSits"
+        android:layout_below="@+id/phoneNumber"
         android:text="@string/ok" />
     
 
