@@ -80,7 +80,7 @@ public class JePropose extends Activity implements OnClickListener {
 			//If any of the text fields is empty, show error message
 			if (check.isAnyFieldNull() == true) {
 				Toast toast = Toast.makeText(getApplicationContext(),
-						"Tous les domaines sont obligatoires",
+						R.string.tousObligatoires,
 						Toast.LENGTH_LONG);
 				toast.show();
 			
