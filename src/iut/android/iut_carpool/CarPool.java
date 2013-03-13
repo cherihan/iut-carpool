@@ -7,21 +7,23 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 public class CarPool extends Activity implements OnClickListener {
 
-	Button jeCherche, jePropose;
+	ImageButton jeCherche;
+	ImageButton jePropose;
+	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.launch);
 
-		jeCherche = (Button) findViewById(R.id.jeCherche);
+		jeCherche = (ImageButton) findViewById(R.id.jeCherche);
 		jeCherche.setOnClickListener(this);
 
-		jePropose = (Button) findViewById(R.id.jePropose);
+		jePropose = (ImageButton) findViewById(R.id.jePropose);
 		jePropose.setOnClickListener(this);
 	}
 
