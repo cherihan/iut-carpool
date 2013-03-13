@@ -1,19 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget0"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#232323" >
 
-    <Button
-        android:id="@+id/jeCherche"
+    <ImageView
+        android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Je cherche" />
+        android:layout_x="58dp"
+        android:layout_y="21dp"
+        android:src="@drawable/logo" />
 
-    <Button
+    <!--
+    <ImageView
+    android:id="@+id/imageView2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_x="0dp"
+    android:layout_y="337dp"
+    android:src="@drawable/logoiutannecy" />
+    -->
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="276dp"
+        android:src="@drawable/main" />
+
+    <ImageButton
         android:id="@+id/jePropose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Je propose" />
+        android:layout_width="200dp"
+        android:layout_height="53dp"
+        android:layout_x="61dp"
+        android:layout_y="128dp"
+        android:src="@drawable/propose" />
 
-</LinearLayout>
+    <ImageButton
+        android:id="@+id/jeCherche"
+        android:layout_width="200dp"
+        android:layout_height="53dp"
+        android:layout_x="61dp"
+        android:layout_y="207dp"
+        android:src="@drawable/cherche" />
+
+</AbsoluteLayout>
