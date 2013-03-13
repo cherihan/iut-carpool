@@ -11,7 +11,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:ems="10"
-        android:hint="Nom"
+        android:hint="@string/nom"
         android:inputType="textPersonName" >
 
         <requestFocus />
@@ -24,7 +24,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/nom"
         android:ems="10"
-        android:hint="Adresse"
+        android:hint="@string/adresse"
         android:inputType="textPostalAddress" />
 
     <EditText
@@ -34,7 +34,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/adresse"
         android:ems="10"
-        android:hint="numéro de téléphone"
+        android:hint="@string/numeroDeTelephone"
         android:inputType="phone" />
     
     
@@ -48,6 +48,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/phoneNumber"
-        android:text="OK" />
+        android:text="@string/ok" />
 
 </RelativeLayout>

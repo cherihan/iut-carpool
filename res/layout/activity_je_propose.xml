@@ -11,7 +11,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:ems="10"
-        android:hint="Nom"
+        android:hint="@string/nom"
         android:inputType="textPersonName" >
 
         <requestFocus />
@@ -24,7 +24,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/nom"
         android:ems="10"
-        android:hint="Adresse"
+        android:hint="@string/adresse"
         android:inputType="textPostalAddress" />
 
     <EditText
@@ -34,7 +34,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/adresse"
         android:ems="10"
-        android:hint="Numéro de téléphone"
+        android:hint="@string/numeroDeTelephone"
         android:inputType="phone" />
 
     <EditText
@@ -44,7 +44,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/phoneNumber"
         android:ems="10"
-        android:hint="Immatriculation"
+        android:hint="@string/immatriculation"
         android:inputType="text" />
     
     <EditText
@@ -54,7 +54,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/licencePlate"
         android:ems="10"
-        android:hint="Brand"
+        android:hint="@string/brand"
         android:inputType="text" />
     
     <EditText
@@ -64,7 +64,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/brand"
         android:ems="10"
-        android:hint="Model"
+        android:hint="@string/model"
         android:inputType="text" />
     
     <EditText
@@ -74,7 +74,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/model"
         android:ems="10"
-        android:hint="Couleur"
+        android:hint="@string/couleur"
         android:inputType="text" />
     
     <EditText
@@ -84,7 +84,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/color"
         android:ems="10"
-        android:hint="places disponibles"
+        android:hint="@string/placesDisponibles"
         android:inputType="number" />
     
     <Button
@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/availableSits"
-        android:text="OK" />
+        android:text="@string/ok" />
     
 
 </RelativeLayout>
